@@ -54,8 +54,8 @@ static unsafe LRESULT WinProc(HWND window, uint message, WPARAM wParam, LPARAM l
     // Handling when mouse moved in the window
     if (message == WM.WM_MOUSEMOVE)
     {
-        var xPos = (int)(short)LOWORD(lParam);   // horizontal position 
-        var yPos = (int)(short)HIWORD(lParam);   // vertical position
+        var xPos = LOWORD(lParam);   // horizontal position 
+        var yPos = HIWORD(lParam);   // vertical position
 
         // Remember what was the last mouse position
         LastPositions.Enqueue(new MousePoint(xPos, yPos));
